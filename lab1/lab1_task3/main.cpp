@@ -10,6 +10,7 @@ struct Employee {
     int age;
     string specialization;
     double averageSalary;
+
     void print_information() const {
         cout << endl;
         cout << "ID: " << id << endl;
@@ -51,13 +52,14 @@ int main() {
     Employee elena {2, "Смирнова", 28, "Лаборант", 50000};
     Employee aleksandr {3, "Зайцев", 29, "Мастер по производству", 58000};
     Employee olga {4, "Загитова", 23, "Лаборант", 50000};
+
     Employee example;
-    example.input_information();
-    example.print_information();
+//    example.input_information();
+//    example.print_information();
 
     Employee our_employees[4] {ivan, elena, aleksandr, olga};
 
-    for (int i = 0; i < 4; i++){
+    for (int i = 3; i >= 0; i--){
         our_employees[i].print_information();
         cout << endl;
     }
