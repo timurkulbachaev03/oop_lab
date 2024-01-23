@@ -48,7 +48,7 @@ int main() {
     Factory technoSteel {2, "ТехноСталь", "Строительный, 45", 135};
     Factory bioTech {2, "БиоТех", " Биологическая, 34", 200};
 
-    Employee ivan {1, "Иванов", 33, "Инженер-конструктор", 66000};
+    Employee ivan {1, "Иванов", 33, "Инженер", 66000};
     Employee elena {2, "Смирнова", 28, "Лаборант", 50000};
     Employee aleksandr {3, "Зайцев", 29, "Мастер по производству", 58000};
     Employee olga {4, "Загитова", 23, "Лаборант", 50000};
@@ -63,6 +63,15 @@ int main() {
         our_employees[i].print_information();
         cout << endl;
     }
+
+    int count_of_laborant = 0;
+    int count_of_eng = 0;
+    for (int i = 0; i < 4; i++){
+        if (our_employees[i].specialization == "Лаборант") count_of_laborant++;
+        if (our_employees[i].specialization == "Инженер") count_of_eng++;
+    }
+    cout << "Количество Лаборантов = " << count_of_laborant << endl;
+    cout << "Количество Инженеров = " << count_of_eng << endl;
 
     return 0;
 }
