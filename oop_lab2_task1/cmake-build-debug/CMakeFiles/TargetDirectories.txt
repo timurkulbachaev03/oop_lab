@@ -1,3 +1,0 @@
-D:/Политех_курс_3/OOP/Labs/oop_lab/oop_lab2_task1/cmake-build-debug/CMakeFiles/oop_lab2_task1.dir
-D:/Политех_курс_3/OOP/Labs/oop_lab/oop_lab2_task1/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Политех_курс_3/OOP/Labs/oop_lab/oop_lab2_task1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
