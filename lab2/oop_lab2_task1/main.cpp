@@ -52,13 +52,8 @@ public:
     }
 
     void print_values(){
-        cout << "ID: " << id << endl;
-        cout << "Hомер рейса: " << flight_number << endl;
-        cout << "Пункт отправления: " << departure_point << endl;
-        cout << "Пункт назначения: " << flight_destination << endl;
-        cout << "Время прибытия: " << arrival_time << endl;
-        cout << "Время отправления: " << departure_time << endl;
-        cout << "Место регистрации: " << place_of_registration << endl;
+        cout << id <<"\t" << flight_number <<"\t\t" << departure_point << "\t\t"<< flight_destination <<"\t\t" << arrival_time;
+        cout << "\t\t" << departure_time << "\t\t" << place_of_registration << endl;
     }
 
     int getId(){
@@ -72,6 +67,8 @@ int Aeroflot::nextId = 1;
 bool compareByDestination(const Aeroflot& a, const Aeroflot& b) {
     return a.flight_destination < b.flight_destination;
 }
+
+void print_table(Aeroflot* table, size_t &size);
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -101,19 +98,20 @@ int main() {
     flight3.place_of_registration = "Terminal3";
 
 
-    Aeroflot example;
-    example.entering_values();
-    cout << endl;
+//    Aeroflot example;
+//    example.entering_values();
+//    cout << endl;
 
-    Aeroflot all_flights[]{flight1, flight2, flight3, example};
-    const size_t size = sizeof(all_flights) / sizeof(all_flights[0]);
+    Aeroflot all_flights[]{flight1, flight2, flight3};
+    size_t size = sizeof(all_flights) / sizeof(all_flights[0]);
+    cout << "size = " << size << endl;
+
 
     if(size > 0){
         sort(all_flights, all_flights + size, compareByDestination);
-        for(int i = 0; i < size; i++){
-            all_flights[i].print_values();
-            cout << endl;
-        }
+        cout << "Отсортировано!" << endl;
+        print_table(all_flights, size);
+
     }
     else{
         cout << "Ошибка!!! Нет объектов в таблице." << endl;
@@ -121,4 +119,13 @@ int main() {
 
 
     return 0;
+}
+
+
+
+void print_table(Aeroflot* table, size_t &size){
+    cout << "ID | Номер рейса | Пункт отпарвления | Пункт назначения | Время прибытия | Время отправления | Мето регистрации" << endl;
+    for(size_t i = 0; i < size; i++){
+        table[i].print_values();
+    }
 }
