@@ -51,7 +51,8 @@ public:
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
-    MyTimer obj(15);
+    string min = "1", sec = "15";
+    MyTimer obj(sec);
     cout << "Секунды: " << obj.getSecond() << endl;
     obj.run();
     return 0;

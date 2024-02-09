@@ -45,21 +45,21 @@ public:
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     Soft program;
-    while(true) {
-        cout << "Вывод свойств программы - 1\tКупить лицензию - 2\tПодсчет количества дней до завершения лицензии  - 3\tВыйти-4" << endl;
-        cout << "Сделайте выбор: ";
+        while(true) {
+            cout << "Вывод свойств программы - 1\tКупить лицензию - 2\tПодсчет количества дней до завершения лицензии  - 3\tВыйти-4" << endl;
+            cout << "Сделайте выбор: ";
 
-        int choice;
-        while (true) {
-            if (cin >> choice) {
-                break;
-            } else {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << "Ошибка ввода! Надо вводить целое число. [1, 4]." << endl;
+            int choice;
+            while (true) {
+                if (cin >> choice) {
+                    break;
+                } else {
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    cout << "Ошибка ввода! Надо вводить целое число. [1, 4]." << endl;
+                }
             }
-        }
-        bool end = false;
+            bool end = false;
         switch (choice) {
             case 1:
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -70,7 +70,7 @@ int main() {
                 program.set_licenseEndDate();
                 break;
             case 3:
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');d
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 program.counting_of_daysLeft();
                 break;
             case 4:
