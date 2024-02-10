@@ -25,6 +25,7 @@ public:
     void getName(){
         cout << name << endl;
     }
+    friend Tatra;
 
 private:
     float speed_plain;
